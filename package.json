@@ -1,0 +1,9 @@
+{
+    "name": "location-affordability-api",
+    "description": "Location Affordability",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.x"
+    }
+}

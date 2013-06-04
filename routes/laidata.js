@@ -9,6 +9,7 @@ var pass = false, user = false;
 
 try {
     var env = JSON.parse(fs.readFileSync('../environment.json', 'utf-8'));
+    console.log(env);
     var server = new Server(env['DOTCLOUD_DATA_MONGODB_HOST'], env['DOTCLOUD_DATA_MONGODB_PORT'], {auto_reconnect: true});
     user = env['DOTCLOUD_DATA_MONGODB_LOGIN'];
     pass = env['DOTCLOUD_DATA_MONGODB_PASSWORD'];

@@ -1,4 +1,5 @@
 var mongo = require('mongodb');
+var fs = require('fs');
 
 var Server = mongo.Server,
     Db = mongo.Db,
@@ -12,6 +13,7 @@ try {
     user = env['DOTCLOUD_DATA_MONGODB_LOGIN'];
     pass = env['DOTCLOUD_DATA_MONGODB_PASSWORD'];
 } catch(err) {
+    console.log(err);
     console.log('Could not read environment file');
 }
 

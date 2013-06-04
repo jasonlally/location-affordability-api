@@ -4,7 +4,13 @@ var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
+if (process.env.NODE_ENV == 'production') {
+    var env = JSON.parse(fs.readFileSync('/home/dotcloud/environment.json', 'utf-8'));
+    var server = new Server(env['DOTCLOUD_DATA_MONGODB_URL'], env['DOTCLOUD_DATA_MONGODB_PORT'], {auto_reconnect: true});
+} else {
+    var server = new Server('localhost', 27017, {auto_reconnect: true});
+}
+
 db = new Db('lai', server);
 
 db.open(function(err, db) {

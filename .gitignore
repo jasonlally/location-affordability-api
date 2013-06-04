@@ -11,7 +11,7 @@
 ## Webstorm
 #################
 
-.idea
+.idea/
 
 #################
 ## Visual Studio
@@ -151,3 +151,5 @@ pip-log.txt
 
 #npm_modules
 node_modules
+
+.dotcloud/

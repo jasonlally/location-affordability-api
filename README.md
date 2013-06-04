@@ -21,5 +21,5 @@ Only available for Denver's data currently.  If you want to try it out, here are
 
 For example:
 -----------------------
-http://laiapi-placematters.dotcloud.com/blockgroup/080010078021
-http://laiapi-placematters.dotcloud.com/blockgroup/080010078021/per_capita_income
+- http://laiapi-placematters.dotcloud.com/blockgroup/080010078021
+- http://laiapi-placematters.dotcloud.com/blockgroup/080010078021/per_capita_income

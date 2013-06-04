@@ -4,14 +4,18 @@ var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
 
-var pass, user;
+var pass = false, user = false;
 
-if (process.env.NODE_ENV == 'production') {
-    var env = JSON.parse(fs.readFileSync('/home/dotcloud/environment.json', 'utf-8'));
+try {
+    var env = JSON.parse(fs.readFileSync('../environment.json', 'utf-8'));
     var server = new Server(env['DOTCLOUD_DATA_MONGODB_HOST'], env['DOTCLOUD_DATA_MONGODB_PORT'], {auto_reconnect: true});
     user = env['DOTCLOUD_DATA_MONGODB_LOGIN'];
     pass = env['DOTCLOUD_DATA_MONGODB_PASSWORD'];
-} else {
+} catch(err) {
+    console.log('Could not read environment file');
+}
+
+if (!user) {
     var server = new Server('localhost', 27017, {auto_reconnect: true}); //27017
     user = '';
     pass = '';

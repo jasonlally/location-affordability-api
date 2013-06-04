@@ -13,3 +13,13 @@ http://laiapi-placematters.dotcloud.com/blockgroup/:id - return all the columns 
 http://laiapi-placematters.dotcloud.com/blockgroup/:id/:field - return a single field for a specific blockgroup ID
 
 And that's it for now.  This is envisioned as allowing consumers, planners, policymakers, and researchers to leverage this dataset more easily and produce analyses or applications.
+
+Only available for Denver's data currently.  If you want to try it out, here are a couple of blockgroup IDs from the dataset
+- 080010078021
+- 080010093044
+- 080010096032
+
+For example:
+-----------------------
+http://laiapi-placematters.dotcloud.com/blockgroup/080010078021
+http://laiapi-placematters.dotcloud.com/blockgroup/080010078021/per_capita_income

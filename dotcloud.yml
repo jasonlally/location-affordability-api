@@ -1,6 +1,9 @@
 www:
-  type: nodejs
-  config:
-    node_version: v0.8.x
+    type: nodejs
+    processes:
+        app: node server.js
+    config:
+        node_version: v0.8.x
+
 data:
-  type: mongodb
+    type: mongodb

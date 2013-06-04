@@ -80,6 +80,7 @@ exports.getBlockgroups = function(req, res) {
 var populateDB = function() {
 
     var data = []; //replace this with csv processor so admin can add a bunch of files to database
+    //testing
 
     db.collection('blkgrps', function(err, collection) {
         collection.insert(data, {safe:true}, function(err, result) {});

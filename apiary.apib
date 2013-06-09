@@ -136,3 +136,29 @@ GET /blockgroup/{id}
   "hh_l_vmt": 9172.0782261601,
   "hh_l_transit_trips": 174.5068072018197
 }
+
+List the column data for a given blockgroup id 
+GET /blockgroup/{id}/{column}
+< 200
+< Content-Type: application/json
+{
+  "_id": "51ae166aafe8e787271a95a0",
+  "blkgrp": "'080010078011'",
+  "residential_density": 5.531194343337836
+}
+
+List the column data for a given blockgroup id 
+GET /blockgroups
+< 200
+< Content-Type: application/json
+[
+  {
+    "_id": "51ae166aafe8e787271a95a0",
+    "blkgrp": "'080010078011'"
+  },
+  {
+    "_id": "51ae166bafe8e787271a95a1",
+    "blkgrp": "'080010078012'"
+  },
+  { ... }
+]

@@ -12,7 +12,7 @@ app.use(restify.fullResponse());
 app.get('/', function (req, res) {
     res.status(200)
     res.header('Content-Type', 'text/html')
-    res.write('Welcome to the Location Affordability Index')
+    res.write('Welcome to the Location Affordability Index API.  Learn more on <a href="https://github.com/jasonlally/location-affordability">GitHub</a>')
     res.end()
 });
 

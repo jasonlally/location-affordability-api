@@ -1,12 +1,15 @@
-var mongo = require('mongodb');
-var fs = require('fs');
+var mongo   = require('mongodb')
+    config  = require('config');
 
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
 
-var pass = false, user = false;
+//var pass = false, user = false;
 
+var server = new Server(config.dbHost, config.dbPort, {auto_reconnect: true}); //27017
+
+/*
 try {
     var env = JSON.parse(fs.readFileSync('../environment.json', 'utf-8'));
     console.log(env);
@@ -23,6 +26,7 @@ if (!user) {
     user = '';
     pass = '';
 }
+*/
 
 db = new Db('lai', server);
 
@@ -34,7 +38,7 @@ db.authenticate('root', 'B13zimMS52bVstZGcIXh', function(err, res) {
 db.open(function(err, db) {
     if(!err) {
         console.log("Connected to 'lai' database");
-        db.authenticate(user,pass);
+        db.authenticate(config.dbUser,config.dbPass);
         db.collection('blkgrps', {strict:true}, function(err, collection) {
             if (err) {
                 console.log("The 'blockgroups' collection doesn't exist. Creating it with sample data...");
@@ -55,10 +59,9 @@ exports.findById = function(req, res) {
 };
 
 exports.getFieldById = function(req, res) {
-    console.log(req);
     var field = req.params.field;
     var id = req.params.id;
-    console.log('Retrieving ' + field + ' for blockgroup' + id);
+    console.log('Retrieving ' + field + ' for blockgroup ' + id);
     db.collection('blkgrps', function(err, collection) {
         collection.findOne({ 'blkgrp' : "'" + id + "'"}, {fields : [field, 'blkgrp']}, function(err, item) {
            res.send(item);

@@ -1,11 +1,19 @@
-var express = require('express'),
-    laidata = require('./routes/laidata');
+var restify     = require('restify'),
+    config      = require('config'),
+    laidata     = require('./routes/laidata');
 
-var app = express();
+var app = restify.createServer();
 
-app.configure(function () {
-    app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
-    app.use(express.bodyParser());
+app.use(restify.queryParser());
+app.use(restify.CORS());
+app.use(restify.fullResponse());
+
+// Routes
+app.get('/', function (req, res) {
+    res.status(200)
+    res.header('Content-Type', 'text/html')
+    res.write('Welcome to the Location Affordability Index')
+    res.end()
 });
 
 app.get('/blockgroup/:id', laidata.findById);

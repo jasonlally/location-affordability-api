@@ -1,0 +1,164 @@
+HOST: http://laiapi-placematters.dotcloud.com/
+
+--- Location Affordability ---
+
+---
+The Location Affordability Index is a dataset from the [Department of Housing and Urban Development](http://portal.hud.gov/hudportal/HUD?src=/program_offices/sustainable_housing_communities/housing_transaffinitiative) (HUD). This dataset provides combined housing and 
+transportation costs that help families, realty professionals, policymakers, and developers make more informed decisions about where to live, work, and invest. 
+---
+
+--
+Retrieving Housing and Transportation Cost Data
+The following shows how to retrieve data on housing and transportation costs
+--
+
+List all data for a given blockgroup id
+GET /blockgroup/{id}
+< 200
+< Content-Type: application/json
+{
+  "_id": "51ae166aafe8e787271a95a0",
+  "blkgrp": "'080010078011'",
+  "residential_density": 5.531194343337836,
+  "gross_hh_density": 4.58990646051836,
+  "block_denstiy": 0.189144496999383,
+  "intersection_density": 0.365679360865474,
+  "employment_aaccess_index": 34757.622078371314,
+  "job_diversity_index": 2207.2023772932557,
+  "average_median_commute_distance": 7.87698,
+  "per_capita_income": 9340.615384615385,
+  "hh_a_income": 60137,
+  "hh_a_size": 2.49,
+  "hh_a_workers": 1.1902820957427314,
+  "hh_a_ht": 33.13384953561908,
+  "hh_a_h": 20.187988998925917,
+  "hh_a_t": 12.94586053669316,
+  "hh_a_autos": 1.7193103152234686,
+  "hh_a_vmt": 16752.612983751,
+  "hh_a_transit_trips": 108.62205465205354,
+  "hh_b_income": 48109.6,
+  "hh_b_size": 2.49,
+  "hh_b_workers": 1.1902820957427314,
+  "hh_b_ht": 37.816728853202115,
+  "hh_b_h": 23.33705961628071,
+  "hh_b_t": 14.479669236921405,
+  "hh_b_autos": 1.632582132753226,
+  "hh_b_vmt": 16459.43136984,
+  "hh_b_transit_trips": 110.00513694518085,
+  "hh_c_income": 45501,
+  "hh_c_size": 2.23,
+  "hh_c_workers": 1.0758775407984127,
+  "hh_c_ht": 38.34941152009121,
+  "hh_c_h": 23.965458108761815,
+  "hh_c_t": 14.383953411329394,
+  "hh_c_autos": 1.533285663594168,
+  "hh_c_vmt": 15460.036044057,
+  "hh_c_transit_trips": 105.6421143680531,
+  "hh_d_income": 72164.4,
+  "hh_d_size": 5,
+  "hh_d_workers": 1,
+  "hh_d_ht": 30.91557475304119,
+  "hh_d_h": 18.707285032509105,
+  "hh_d_t": 12.208289720532086,
+  "hh_d_autos": 2.0511789193765404,
+  "hh_d_vmt": 17662.89883184,
+  "hh_d_transit_trips": 162.43652373490025,
+  "hh_e_income": 34200,
+  "hh_e_size": 3,
+  "hh_e_workers": 1,
+  "hh_e_ht": 49.021988940335106,
+  "hh_e_h": 31.093995909613877,
+  "hh_e_t": 17.92799303072123,
+  "hh_e_autos": 1.4921653539823094,
+  "hh_e_vmt": 15453.2744906,
+  "hh_e_transit_trips": 140.69970587701403,
+  "hh_f_income": 54650,
+  "hh_f_size": 3,
+  "hh_f_workers": 1,
+  "hh_f_ht": 35.2969971997327,
+  "hh_f_h": 22.24434043058709,
+  "hh_f_t": 13.052656769145612,
+  "hh_f_autos": 1.7002714614082364,
+  "hh_f_vmt": 16514.685084615,
+  "hh_f_transit_trips": 131.8908164110466,
+  "hh_g_income": 11139,
+  "hh_g_size": 1,
+  "hh_g_workers": 1,
+  "hh_g_ht": 99.73836529203155,
+  "hh_g_h": 74.6200595189659,
+  "hh_g_t": 25.11830577306564,
+  "hh_g_autos": 0.8923548794684439,
+  "hh_g_vmt": 7294.1410208347,
+  "hh_g_transit_trips": 0,
+  "hh_h_income": 26439,
+  "hh_h_size": 5,
+  "hh_h_workers": 1,
+  "hh_h_ht": 63.20346395937425,
+  "hh_h_h": 41.42585538934612,
+  "hh_h_t": 21.777608570028132,
+  "hh_h_autos": 1.4748044139696372,
+  "hh_h_vmt": 13769.763558927,
+  "hh_h_transit_trips": 169.1391207382788,
+  "hh_i_income": 48302.81124497992,
+  "hh_i_size": 1,
+  "hh_i_workers": 1,
+  "hh_i_ht": 35.566197596894725,
+  "hh_i_h": 25.742433576816662,
+  "hh_i_t": 9.82376402007806,
+  "hh_i_autos": 1.1650927884290398,
+  "hh_i_vmt": 11027.229307292,
+  "hh_i_transit_trips": 0,
+  "hh_j_income": 24151.40562248996,
+  "hh_j_size": 1,
+  "hh_j_workers": 1,
+  "hh_j_ht": 54.50814295126792,
+  "hh_j_h": 39.097710687209954,
+  "hh_j_t": 15.410432264057963,
+  "hh_j_autos": 0.9642402891060459,
+  "hh_j_vmt": 9253.6696558878,
+  "hh_j_transit_trips": 0,
+  "hh_k_income": 90205.5,
+  "hh_k_size": 4,
+  "hh_k_workers": 2,
+  "hh_k_ht": 27.60224060259744,
+  "hh_k_h": 15.925175976392365,
+  "hh_k_t": 11.677064626205073,
+  "hh_k_autos": 2.3479170937260374,
+  "hh_k_vmt": 22474.233940271,
+  "hh_k_transit_trips": 136.6612067815995,
+  "hh_l_income": 48109.6,
+  "hh_l_size": 2,
+  "hh_l_workers": 0,
+  "hh_l_ht": 37.21715304395313,
+  "hh_l_h": 28.060927548763658,
+  "hh_l_t": 9.156225495189478,
+  "hh_l_autos": 1.1207560063428357,
+  "hh_l_vmt": 9172.0782261601,
+  "hh_l_transit_trips": 174.5068072018197
+}
+
+List the column data for a given blockgroup id 
+GET /blockgroup/{id}/{column}
+< 200
+< Content-Type: application/json
+{
+  "_id": "51ae166aafe8e787271a95a0",
+  "blkgrp": "'080010078011'",
+  "residential_density": 5.531194343337836
+}
+
+List the column data for a given blockgroup id 
+GET /blockgroups
+< 200
+< Content-Type: application/json
+[
+  {
+    "_id": "51ae166aafe8e787271a95a0",
+    "blkgrp": "'080010078011'"
+  },
+  {
+    "_id": "51ae166bafe8e787271a95a1",
+    "blkgrp": "'080010078012'"
+  },
+  { ... }
+]

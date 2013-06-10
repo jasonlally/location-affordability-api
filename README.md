@@ -23,3 +23,7 @@ For example:
 -----------------------
 - http://laiapi-placematters.dotcloud.com/blockgroup/080010078021
 - http://laiapi-placematters.dotcloud.com/blockgroup/080010078021/per_capita_income
+
+Example Application
+-----------------------
+There's an example application that takes an address and returns the data to the user.  Nothing fancy, just a basic demo of using the API.  You can try it at https://github.com/jasonlally/location-affordability-demo and check out the source code here https://github.com/jasonlally/location-affordability-demo

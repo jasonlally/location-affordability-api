@@ -46,7 +46,7 @@ db.open(function(err, db) {
             }
         });
     } else {
-        console.log(config.dbHost + ' ' + config.dbPort);
+        console.log(config.dbHost + ' ' + config.dbPort + " " + process.env.NODE_ENV);
     }
 });
 
